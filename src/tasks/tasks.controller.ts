@@ -21,7 +21,7 @@ export class TasksController {
     }
 
 	@Post()
-	@UsePipes(ValidationPipe)
+	@UsePipes(ValidationPipe) // ValidationPipe will validate DTO against the rules defined in DTO
     createTask(@Body() createTaskDto:CreateTaskDto): Promise<Task> {
         return this.tasksService.createTask(createTaskDto);
 	}
